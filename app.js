@@ -6,6 +6,9 @@ app.get('/', (req, res) => {
   res.send('Hello Митильба!')
 });
 
+const router = require('./router/index');
+app.use(router);
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
