@@ -6,6 +6,9 @@ app.get('/', (req, res) => {
   res.send('Hello Митильба!')
 });
 
+const cors = require('cors');
+app.use(cors());
+
 const router = require('./router/index');
 app.use(router);
 

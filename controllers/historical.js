@@ -1,11 +1,8 @@
 const yahooFinance = require('yahoo-finance');
 
-module.exports.getQuote = (req, res, next) => {
-    const { symbol } = req.params;
-    yahooFinance.quote({
-      symbol: symbol,
-      modules: ['price']
-    }, function (err, quotes) {
+module.exports.postHistorical = (req, res, next) => {
+    const body = req.body;
+    yahooFinance.historical(body, function (err, quotes) {
       if (!err) {
         res.send(quotes);
       } else {
